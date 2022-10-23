@@ -1,4 +1,4 @@
-package at.fhtw.swen3.persistence.entity;
+package at.fhtw.swen3.model.entites;
 
 import at.fhtw.swen3.services.dto.TrackingInformation;
 import lombok.AllArgsConstructor;
@@ -17,21 +17,31 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "parcel")
 public class ParcelEntity {
     @Id
+    @Column
     @Pattern(regexp = "^[A-Z0-9]{9}$")
     private String trackingId;
+    @Column
     @NotNull(message = "Weight cannot be null")
     @Min(value = 0, message = "Weight cannot be negative")
     private Float weight;
+    @OneToOne
+    @JoinColumn(name = "fk_recipient")
     @NotNull(message = "Recipient ID cannot be null")
-    private Long recipient;
+    private RecipientEntity recipient;
+    @OneToOne
+    @JoinColumn(name = "fk_sender")
     @NotNull(message = "Sender ID cannot be null")
-    private Long sender;
+    private RecipientEntity sender;
+    @Column
     @NotNull(message = "State cannot be null")
     private TrackingInformation.StateEnum state;
+    @OneToMany(mappedBy = "parcel")
     @NotNull(message = "Visited Hops cannot be null")
-    private List<Long> visitedHops;
+    private List<HopArrivalEntity> visitedHops;
+    @OneToMany(mappedBy = "parcel")
     @NotNull(message = "Future Hops cannot be null")
-    private List<Long> futureHops;
+    private List<HopArrivalEntity> futureHops;
 }
