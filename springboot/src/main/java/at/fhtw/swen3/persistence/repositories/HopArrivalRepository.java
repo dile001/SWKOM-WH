@@ -1,6 +1,5 @@
-package at.fhtw.swen3.model.repositories;
+package at.fhtw.swen3.persistence.repositories;
 
-import at.fhtw.swen3.model.entites.HopArrivalEntity;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

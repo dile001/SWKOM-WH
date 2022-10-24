@@ -6,18 +6,43 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.List;
+
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "parcel")
 public class ParcelEntity {
+    @Id
+    @Column
+    @Pattern(regexp = "^[A-Z0-9]{9}$")
     private String trackingId;
+    @Column
+    @NotNull(message = "Weight cannot be null")
+    @Min(value = 0, message = "Weight cannot be negative")
     private Float weight;
-    private Long recipient;
-    private Long sender;
+    @OneToOne
+    @JoinColumn(name = "fk_recipient")
+    @NotNull(message = "Recipient ID cannot be null")
+    private RecipientEntity recipient;
+    @OneToOne
+    @JoinColumn(name = "fk_sender")
+    @NotNull(message = "Sender ID cannot be null")
+    private RecipientEntity sender;
+    @Column
+    @NotNull(message = "State cannot be null")
     private TrackingInformation.StateEnum state;
-    private List<Long> visitedHops;
-    private List<Long> futureHops;
+    @OneToMany(mappedBy = "parcel")
+    @NotNull(message = "Visited Hops cannot be null")
+    private List<HopArrivalEntity> visitedHops;
+    @OneToMany(mappedBy = "parcel")
+    @NotNull(message = "Future Hops cannot be null")
+    private List<HopArrivalEntity> futureHops;
 }
