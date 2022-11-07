@@ -1,6 +1,6 @@
 package at.fhtw.swen3.services.impl;
 
-import at.fhtw.swen3.services.WarehouseApi;
+import at.fhtw.swen3.controller.rest.WarehouseApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.request.NativeWebRequest;

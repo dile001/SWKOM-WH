@@ -1,7 +1,8 @@
-package at.fhtw.swen3.persistence;
+package at.fhtw.swen3.services.dto;
 
 import java.util.Objects;
 
+import at.fhtw.swen3.persistence.Hop;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -24,7 +25,7 @@ public class WarehouseNextHops {
   private Integer traveltimeMins;
 
   @JsonProperty("hop")
-  private Hop hop;
+  private at.fhtw.swen3.persistence.Hop hop;
 
   public WarehouseNextHops traveltimeMins(Integer traveltimeMins) {
     this.traveltimeMins = traveltimeMins;
@@ -45,7 +46,7 @@ public class WarehouseNextHops {
     this.traveltimeMins = traveltimeMins;
   }
 
-  public WarehouseNextHops hop(Hop hop) {
+  public WarehouseNextHops hop(at.fhtw.swen3.persistence.Hop hop) {
     this.hop = hop;
     return this;
   }
@@ -56,7 +57,7 @@ public class WarehouseNextHops {
   */
   @NotNull @Valid 
   @Schema(name = "hop", required = true)
-  public Hop getHop() {
+  public at.fhtw.swen3.persistence.Hop getHop() {
     return hop;
   }
 

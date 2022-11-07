@@ -1,9 +1,5 @@
 package at.fhtw.swen3.services.dto;
 
-import at.fhtw.swen3.persistence.GeoCoordinate;
-import at.fhtw.swen3.persistence.Transferwarehouse;
-import at.fhtw.swen3.persistence.Truck;
-import at.fhtw.swen3.persistence.Warehouse;
 import com.fasterxml.jackson.annotation.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 
