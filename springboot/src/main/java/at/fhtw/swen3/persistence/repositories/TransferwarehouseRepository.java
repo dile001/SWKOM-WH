@@ -1,7 +1,7 @@
 package at.fhtw.swen3.persistence.repositories;
 
 import at.fhtw.swen3.persistence.entities.HopArrivalEntity;
-import at.fhtw.swen3.persistence.entities.HopEntity;
+import at.fhtw.swen3.persistence.entities.TransferwarehouseEntity;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,25 +15,24 @@ import java.util.Optional;
 import java.util.function.Function;
 
 @Repository
-public class HopRepository implements JpaRepository<HopEntity, Long> {
-
+public class TransferwarehouseRepository implements JpaRepository<TransferwarehouseEntity, Long> {
     @Override
-    public List<HopEntity> findAll() {
+    public List<TransferwarehouseEntity> findAll() {
         return null;
     }
 
     @Override
-    public List<HopEntity> findAll(Sort sort) {
+    public List<TransferwarehouseEntity> findAll(Sort sort) {
         return null;
     }
 
     @Override
-    public Page<HopEntity> findAll(Pageable pageable) {
+    public Page<TransferwarehouseEntity> findAll(Pageable pageable) {
         return null;
     }
 
     @Override
-    public List<HopEntity> findAllById(Iterable<Long> longs) {
+    public List<TransferwarehouseEntity> findAllById(Iterable<Long> longs) {
         return null;
     }
 
@@ -48,7 +47,7 @@ public class HopRepository implements JpaRepository<HopEntity, Long> {
     }
 
     @Override
-    public void delete(HopEntity entity) {
+    public void delete(TransferwarehouseEntity entity) {
 
     }
 
@@ -58,7 +57,7 @@ public class HopRepository implements JpaRepository<HopEntity, Long> {
     }
 
     @Override
-    public void deleteAll(Iterable<? extends HopEntity> entities) {
+    public void deleteAll(Iterable<? extends TransferwarehouseEntity> entities) {
 
     }
 
@@ -68,17 +67,17 @@ public class HopRepository implements JpaRepository<HopEntity, Long> {
     }
 
     @Override
-    public <S extends HopEntity> S save(S entity) {
+    public <S extends TransferwarehouseEntity> S save(S entity) {
         return null;
     }
 
     @Override
-    public <S extends HopEntity> List<S> saveAll(Iterable<S> entities) {
+    public <S extends TransferwarehouseEntity> List<S> saveAll(Iterable<S> entities) {
         return null;
     }
 
     @Override
-    public Optional<HopEntity> findById(Long aLong) {
+    public Optional<TransferwarehouseEntity> findById(Long aLong) {
         return Optional.empty();
     }
 
@@ -93,17 +92,17 @@ public class HopRepository implements JpaRepository<HopEntity, Long> {
     }
 
     @Override
-    public <S extends HopEntity> S saveAndFlush(S entity) {
+    public <S extends TransferwarehouseEntity> S saveAndFlush(S entity) {
         return null;
     }
 
     @Override
-    public <S extends HopEntity> List<S> saveAllAndFlush(Iterable<S> entities) {
+    public <S extends TransferwarehouseEntity> List<S> saveAllAndFlush(Iterable<S> entities) {
         return null;
     }
 
     @Override
-    public void deleteAllInBatch(Iterable<HopEntity> entities) {
+    public void deleteAllInBatch(Iterable<TransferwarehouseEntity> entities) {
 
     }
 
@@ -118,52 +117,52 @@ public class HopRepository implements JpaRepository<HopEntity, Long> {
     }
 
     @Override
-    public HopEntity getOne(Long aLong) {
+    public TransferwarehouseEntity getOne(Long aLong) {
         return null;
     }
 
     @Override
-    public HopEntity getById(Long aLong) {
+    public TransferwarehouseEntity getById(Long aLong) {
         return null;
     }
 
     @Override
-    public HopEntity getReferenceById(Long aLong) {
+    public TransferwarehouseEntity getReferenceById(Long aLong) {
         return null;
     }
 
     @Override
-    public <S extends HopEntity> Optional<S> findOne(Example<S> example) {
+    public <S extends TransferwarehouseEntity> Optional<S> findOne(Example<S> example) {
         return Optional.empty();
     }
 
     @Override
-    public <S extends HopEntity> List<S> findAll(Example<S> example) {
+    public <S extends TransferwarehouseEntity> List<S> findAll(Example<S> example) {
         return null;
     }
 
     @Override
-    public <S extends HopEntity> List<S> findAll(Example<S> example, Sort sort) {
+    public <S extends TransferwarehouseEntity> List<S> findAll(Example<S> example, Sort sort) {
         return null;
     }
 
     @Override
-    public <S extends HopEntity> Page<S> findAll(Example<S> example, Pageable pageable) {
+    public <S extends TransferwarehouseEntity> Page<S> findAll(Example<S> example, Pageable pageable) {
         return null;
     }
 
     @Override
-    public <S extends HopEntity> long count(Example<S> example) {
+    public <S extends TransferwarehouseEntity> long count(Example<S> example) {
         return 0;
     }
 
     @Override
-    public <S extends HopEntity> boolean exists(Example<S> example) {
+    public <S extends TransferwarehouseEntity> boolean exists(Example<S> example) {
         return false;
     }
 
     @Override
-    public <S extends HopEntity, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
+    public <S extends TransferwarehouseEntity, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
         return null;
     }
 }
