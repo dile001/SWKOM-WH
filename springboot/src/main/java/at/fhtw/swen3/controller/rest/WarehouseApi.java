@@ -6,7 +6,7 @@
 package at.fhtw.swen3.controller.rest;
 
 import at.fhtw.swen3.services.dto.Error;
-import at.fhtw.swen3.persistence.Hop;
+import at.fhtw.swen3.services.dto.Hop;
 import at.fhtw.swen3.services.dto.Warehouse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

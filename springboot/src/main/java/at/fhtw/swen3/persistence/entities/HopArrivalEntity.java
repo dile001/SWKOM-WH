@@ -33,9 +33,6 @@ public class HopArrivalEntity {
     @Column
     @NotNull(message = "Date and Time cannot be null")
     private OffsetDateTime dateTime;
-    @ManyToOne
-    @JoinColumn(name = "parcel")
-    private ParcelEntity parcel;
 
     public HopArrivalEntity(String code, String description, OffsetDateTime dateTime){
         this.code = code;
