@@ -1,4 +1,4 @@
-package at.fhtw.swen3.services.impl;
+package at.fhtw.swen3.controller;
 
 import at.fhtw.swen3.controller.rest.WarehouseApi;
 import org.springframework.beans.factory.annotation.Autowired;

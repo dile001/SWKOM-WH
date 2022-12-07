@@ -1,4 +1,4 @@
-package at.fhtw.swen3.services.impl;
+package at.fhtw.swen3.controller;
 
 
 import at.fhtw.swen3.controller.rest.ParcelApi;
@@ -24,5 +24,7 @@ public class ParcelApiController implements ParcelApi {
     public Optional<NativeWebRequest> getRequest() {
         return Optional.ofNullable(request);
     }
+
+
 
 }
