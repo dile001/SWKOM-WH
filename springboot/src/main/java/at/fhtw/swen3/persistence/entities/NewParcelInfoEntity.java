@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "error")
+@Table(name = "newParcelInfo")
 public class NewParcelInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")

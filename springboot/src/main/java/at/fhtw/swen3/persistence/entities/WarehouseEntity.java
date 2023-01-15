@@ -1,6 +1,7 @@
 package at.fhtw.swen3.persistence.entities;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,11 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "warehouse")
+@SuperBuilder
 public class WarehouseEntity extends HopEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @Column
-    private Long id;
 
     @Column
     private Integer level;

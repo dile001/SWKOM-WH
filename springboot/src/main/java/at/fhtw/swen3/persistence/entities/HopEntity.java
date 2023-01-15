@@ -1,19 +1,19 @@
 package at.fhtw.swen3.persistence.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.geo.Point;
 
 import javax.persistence.*;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "hop")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@SuperBuilder
 public class HopEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")

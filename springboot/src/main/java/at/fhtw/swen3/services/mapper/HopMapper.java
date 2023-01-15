@@ -7,12 +7,12 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
-public interface HopMapper{
+public interface HopMapper extends CoordinateToPointMapper{
     HopMapper INSTANCE = Mappers.getMapper(HopMapper.class);
 
-    @Mapping(source = "locationCoordinates",target = "locationCoordinates")//TODO proveri
+    @Mapping(source = "locationCoordinates", target = "locationCoordinates", qualifiedByName = "pointToGeoCoordinate")
     Hop entityToDto(HopEntity entity);
 
-    @Mapping(source = "locationCoordinates",target = "locationCoordinates")//TODO proveri
+    @Mapping(source = "locationCoordinates", target = "locationCoordinates", qualifiedByName = "geoCoordinateToPoint")
     HopEntity dtoToEntity(Hop o);
 }
