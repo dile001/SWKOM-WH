@@ -2,16 +2,13 @@ package at.fhtw.swen3.services.mapper;
 
 import at.fhtw.swen3.persistence.entities.HopArrivalEntity;
 import at.fhtw.swen3.services.dto.HopArrival;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
-public class HopArrivalMapper extends AbstractMapper<HopArrivalEntity, HopArrival> {
+@Mapper
+public interface HopArrivalMapper{
+    HopArrivalMapper INSTANCE = Mappers.getMapper(HopArrivalMapper.class);
 
-    @Override
-    public HopArrival entityToDto(HopArrivalEntity entity) {
-        return null;
-    }
-
-    @Override
-    public HopArrivalEntity dtoToEntity(HopArrival o) {
-        return null;
-    }
+    HopArrival entityToDto(HopArrivalEntity entity);
+    HopArrivalEntity dtoToEntity(HopArrival o);
 }

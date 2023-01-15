@@ -2,16 +2,17 @@ package at.fhtw.swen3.services.mapper;
 
 import at.fhtw.swen3.persistence.entities.HopEntity;
 import at.fhtw.swen3.services.dto.Hop;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
-public class HopMapper extends AbstractMapper<HopEntity, Hop> {
+@Mapper
+public interface HopMapper{
+    HopMapper INSTANCE = Mappers.getMapper(HopMapper.class);
 
-    @Override
-    public Hop entityToDto(HopEntity entity) {
-        return null;
-    }
+    @Mapping(source = "locationCoordinates",target = "locationCoordinates")//TODO proveri
+    Hop entityToDto(HopEntity entity);
 
-    @Override
-    public HopEntity dtoToEntity(Hop o) {
-        return null;
-    }
+    @Mapping(source = "locationCoordinates",target = "locationCoordinates")//TODO proveri
+    HopEntity dtoToEntity(Hop o);
 }

@@ -2,16 +2,13 @@ package at.fhtw.swen3.services.mapper;
 
 import at.fhtw.swen3.persistence.entities.RecipientEntity;
 import at.fhtw.swen3.services.dto.Recipient;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
-public class RecipientMapper extends AbstractMapper<RecipientEntity, Recipient> {
+@Mapper
+public interface RecipientMapper{
+    RecipientMapper INSTANCE = Mappers.getMapper(RecipientMapper.class);
 
-    @Override
-    public Recipient entityToDto(RecipientEntity entity) {
-        return null;
-    }
-
-    @Override
-    public RecipientEntity dtoToEntity(Recipient o) {
-        return null;
-    }
+    Recipient entityToDto(RecipientEntity entity);
+    RecipientEntity dtoToEntity(Recipient o);
 }

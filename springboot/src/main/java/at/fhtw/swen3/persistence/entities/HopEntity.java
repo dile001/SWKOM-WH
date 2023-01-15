@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.geo.Point;
 
 import javax.persistence.*;
 
@@ -34,6 +35,5 @@ public class HopEntity {
     private String locationName;
 
     @Column
-    @OneToOne(mappedBy = "geoCoordinate")
-    private GeoCoordinateEntity locationCoordinates;
+    private Point locationCoordinates;
 }

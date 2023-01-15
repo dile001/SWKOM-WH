@@ -7,9 +7,9 @@
             <property name="hibernate.dialect" value="org.hibernate.spatial.dialect.postgis.PostgisPG10Dialect"/>
 
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5431/swe1db"/>
-            <property name="hibernate.connection.username" value="swe1user"/>
-            <property name="hibernate.connection.password" value="swe1pw"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5431/swkom"/>
+            <property name="hibernate.connection.username" value="swkom"/>
+            <property name="hibernate.connection.password" value="swkom"/>
             <property name="hibernate.connection.pool_size" value="5"/>
 
             <property name="hibernate.show_sql" value="true"/>

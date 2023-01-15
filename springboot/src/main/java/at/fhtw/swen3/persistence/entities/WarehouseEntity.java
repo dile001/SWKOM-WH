@@ -1,20 +1,17 @@
 package at.fhtw.swen3.persistence.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "warehouse")
-public class WarehouseEntity {
+public class WarehouseEntity extends HopEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @Column
