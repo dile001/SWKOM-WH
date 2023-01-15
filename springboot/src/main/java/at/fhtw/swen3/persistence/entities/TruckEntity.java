@@ -1,25 +1,21 @@
 package at.fhtw.swen3.persistence.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
-@Data
-@Builder
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "truck")
-public class TruckEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @Column
-    private Long id;
-
+@Getter
+@Setter
+@SuperBuilder
+public class TruckEntity extends HopEntity {
     @Column
     private String regionGeoJson;
 
