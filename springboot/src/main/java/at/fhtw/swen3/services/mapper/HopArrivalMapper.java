@@ -1,4 +1,14 @@
 package at.fhtw.swen3.services.mapper;
 
-public class HopArrivalMapper {
+import at.fhtw.swen3.persistence.entities.HopArrivalEntity;
+import at.fhtw.swen3.services.dto.HopArrival;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+@Mapper
+public interface HopArrivalMapper{
+    HopArrivalMapper INSTANCE = Mappers.getMapper(HopArrivalMapper.class);
+
+    HopArrival entityToDto(HopArrivalEntity entity);
+    HopArrivalEntity dtoToEntity(HopArrival o);
 }

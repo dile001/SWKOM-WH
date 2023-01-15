@@ -1,46 +1,33 @@
 package at.fhtw.swen3.services.mapper;
 
-import at.fhtw.swen3.services.dto.HopArrival;
-import at.fhtw.swen3.services.dto.Recipient;
-import at.fhtw.swen3.persistence.entities.HopArrivalEntity;
 import at.fhtw.swen3.persistence.entities.ParcelEntity;
-import at.fhtw.swen3.persistence.entities.RecipientEntity;
 import at.fhtw.swen3.services.dto.NewParcelInfo;
 import at.fhtw.swen3.services.dto.Parcel;
 import at.fhtw.swen3.services.dto.TrackingInformation;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
-import java.util.ArrayList;
-import java.util.List;
+@Mapper
+public interface ParcelMapper{
+    ParcelMapper INSTANCE= Mappers.getMapper(ParcelMapper.class);
 
-public class ParcelMapper implements Mapper {
-    @Override
-    public RecipientEntity recipientEntity(Recipient recipient) {
-        return new RecipientEntity(recipient.getName(), recipient.getStreet(), recipient.getPostalCode(), recipient.getCity(), recipient.getCountry());
-    }
+    @Mapping(source = "entity.state", target = "state")
+    @Mapping(source = "entity.visitedHops", target = "visitedHops")//TODO proveri
+    @Mapping(source = "entity.futureHops", target = "futureHops")//TODO proveri
+    TrackingInformation trackingInformationEntityToDto(ParcelEntity entity);
 
-    @Override
-    public HopArrivalEntity hopArrivalEntity(HopArrival hopArrival) {
-        return new HopArrivalEntity(hopArrival.getCode(), hopArrival.getDescription() , hopArrival.getDateTime());
-    }
+    @Mapping(source = "entity.sender", target = "sender")
+    @Mapping(source = "entity.recipient", target = "recipient")
+    @Mapping(source = "entity.weight", target = "weight")
+    Parcel entityToDto(ParcelEntity entity);
 
-    @Override
-    public List<HopArrivalEntity> hopArrivalEntities(List<HopArrival> hopArrivalList) {
-        List<HopArrivalEntity> hopArrivalEntities = new ArrayList<>();
-        for (HopArrival hopArrival : hopArrivalList) {
-            hopArrivalEntities.add(hopArrivalEntity(hopArrival));
-        }
-        return hopArrivalEntities;
-    }
-
-    @Override
-    public ParcelEntity parcelEntity(Parcel parcel, NewParcelInfo newParcelInfo, TrackingInformation trackingInformation) {
-        return new ParcelEntity(
-                newParcelInfo.getTrackingId(),
-                parcel.getWeight(),
-                recipientEntity(parcel.getRecipient()),
-                recipientEntity(parcel.getSender()),
-                trackingInformation.getState(),
-                hopArrivalEntities(trackingInformation.getVisitedHops()),
-                hopArrivalEntities(trackingInformation.getFutureHops()));
-    }
+    @Mapping(source = "trackingInformation.state.", target = "state")
+    @Mapping(source = "trackingInformation.visitedHops", target = "visitedHops")//TODO proveri
+    @Mapping(source = "trackingInformation.futureHops", target = "futureHops")//TODO proveri
+    @Mapping(source = "parcel.weight", target = "weight")
+    @Mapping(source = "parcel.recipient", target = "recipient")
+    @Mapping(source = "parcel.sender", target = "sender")
+    @Mapping(source = "info.trackingId", target = "trackingId")
+    ParcelEntity dtoToEntity(NewParcelInfo newParcelInfo, Parcel parcel, TrackingInformation trackingInformation);
 }

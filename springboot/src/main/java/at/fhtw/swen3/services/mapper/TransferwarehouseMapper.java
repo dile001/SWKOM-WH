@@ -1,4 +1,17 @@
 package at.fhtw.swen3.services.mapper;
 
-public class TransferwarehouseMapper {
+import at.fhtw.swen3.persistence.entities.TransferwarehouseEntity;
+import at.fhtw.swen3.services.dto.Transferwarehouse;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
+
+@Mapper
+public interface TransferwarehouseMapper{
+    TransferwarehouseMapper INSTANCE = Mappers.getMapper(TransferwarehouseMapper.class);
+
+    @Mapping(source = "locationCoordinates",target = "locationCoordinates")//TODO proveri
+    Transferwarehouse entityToDto(TransferwarehouseEntity entity);
+    @Mapping(source = "locationCoordinates",target = "locationCoordinates")//TODO proveri
+    TransferwarehouseEntity dtoToEntity(Transferwarehouse o);
 }
