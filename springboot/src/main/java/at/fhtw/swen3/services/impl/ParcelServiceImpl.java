@@ -37,11 +37,11 @@ import java.util.UUID;
 @Service
 @Slf4j
 public class ParcelServiceImpl implements ParcelService {
-    private ParcelRepository parcelRepository;
-    private HopRepository hopRepository;
-    private HopArrivalRepository hopArrivalRepository;
-    private RecipientRepository recipientRepository;
-    private PredictionService predictionService;
+    private final ParcelRepository parcelRepository;
+    private final HopRepository hopRepository;
+    private final HopArrivalRepository hopArrivalRepository;
+    private final RecipientRepository recipientRepository;
+    private final PredictionService predictionService;
 
     @Autowired
     public ParcelServiceImpl(HopRepository hopRepository, ParcelRepository parcelRepository, HopArrivalRepository hopArrivalRepository, RecipientRepository recipientRepository, PredictionService predictionService) {

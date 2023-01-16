@@ -1,14 +1,13 @@
 package at.fhtw.swen3.services.mapper;
 
 import at.fhtw.swen3.persistence.entities.TransferWarehouseEntity;
-import at.fhtw.swen3.persistence.entities.TransferWarehouseEntity.TransferWarehouseEntityBuilder;
 import at.fhtw.swen3.services.dto.Transferwarehouse;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-01-15T18:58:48+0100",
-    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17 (Oracle Corporation)"
+    date = "2023-01-16T19:44:04+0100",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17 (Oracle Corporation)"
 )
 public class TransferWarehouseMapperImpl implements TransferWarehouseMapper {
 
@@ -39,7 +38,7 @@ public class TransferWarehouseMapperImpl implements TransferWarehouseMapper {
             return null;
         }
 
-        TransferWarehouseEntityBuilder<?, ?> transferWarehouseEntity = TransferWarehouseEntity.builder();
+        TransferWarehouseEntity.TransferWarehouseEntityBuilder<?, ?> transferWarehouseEntity = TransferWarehouseEntity.builder();
 
         transferWarehouseEntity.locationCoordinates( CoordinateToPointMapper.geoCoordinateToPoint( o.getLocationCoordinates() ) );
         transferWarehouseEntity.hopType( o.getHopType() );
