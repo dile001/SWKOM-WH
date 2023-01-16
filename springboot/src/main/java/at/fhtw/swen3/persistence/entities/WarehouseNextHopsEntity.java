@@ -1,6 +1,5 @@
 package at.fhtw.swen3.persistence.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,7 +20,7 @@ public class WarehouseNextHopsEntity {
     private Long id;
 
     @Column
-    private Integer traveltimeMins;
+    private Integer travelTimeMinutes;
 
     @OneToOne(mappedBy = "hop")
     private HopEntity hop;

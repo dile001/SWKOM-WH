@@ -23,8 +23,8 @@ import java.util.List;
 @Service
 @Slf4j
 public class PredictionServiceImpl implements PredictionService {
-    private BingEncodingProxy bingEncodingProxy;
-    private WarehouseRepository warehouseRepository;
+    private final BingEncodingProxy bingEncodingProxy;
+    private final WarehouseRepository warehouseRepository;
 
     @Autowired
     public PredictionServiceImpl(BingEncodingProxy bingEncodingProxy, WarehouseRepository warehouseRepository) {

@@ -1,14 +1,13 @@
 package at.fhtw.swen3.services.mapper;
 
 import at.fhtw.swen3.persistence.entities.WarehouseEntity;
-import at.fhtw.swen3.persistence.entities.WarehouseEntity.WarehouseEntityBuilder;
 import at.fhtw.swen3.services.dto.Warehouse;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-01-15T18:58:48+0100",
-    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17 (Oracle Corporation)"
+    date = "2023-01-16T19:44:04+0100",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17 (Oracle Corporation)"
 )
 public class WarehouseMapperImpl implements WarehouseMapper {
 
@@ -38,7 +37,7 @@ public class WarehouseMapperImpl implements WarehouseMapper {
             return null;
         }
 
-        WarehouseEntityBuilder<?, ?> warehouseEntity = WarehouseEntity.builder();
+        WarehouseEntity.WarehouseEntityBuilder<?, ?> warehouseEntity = WarehouseEntity.builder();
 
         warehouseEntity.locationCoordinates( CoordinateToPointMapper.geoCoordinateToPoint( o.getLocationCoordinates() ) );
         warehouseEntity.nextHops( WarehouseMapper.nextHopsDtoToEntity( o.getNextHops() ) );

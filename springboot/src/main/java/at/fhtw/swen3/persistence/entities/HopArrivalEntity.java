@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.time.OffsetDateTime;
 
-
 @Data
 @Builder
 @NoArgsConstructor
@@ -34,9 +33,4 @@ public class HopArrivalEntity {
     @NotNull(message = "Date and Time cannot be null")
     private OffsetDateTime dateTime;
 
-    public HopArrivalEntity(String code, String description, OffsetDateTime dateTime){
-        this.code = code;
-        this.description = description;
-        this.dateTime = dateTime;
-    }
 }

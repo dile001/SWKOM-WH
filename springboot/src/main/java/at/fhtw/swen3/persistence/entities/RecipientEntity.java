@@ -44,11 +44,4 @@ public class RecipientEntity {
     @OneToOne(mappedBy = "sender")
     private ParcelEntity senderParcel;
 
-    public RecipientEntity(String name, String street, String postalCode, String city, String country){
-        this.name = name;
-        this.street = street;
-        this.postalCode = postalCode;
-        this.city = city;
-        this.country = country;
-    }
 }
