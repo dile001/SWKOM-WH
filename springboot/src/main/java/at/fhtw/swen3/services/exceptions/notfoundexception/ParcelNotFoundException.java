@@ -1,4 +1,4 @@
-package at.fhtw.swen3.services.exceptions._____notfoundexception;
+package at.fhtw.swen3.services.exceptions.notfoundexception;
 
 public class ParcelNotFoundException extends Exception{
     public ParcelNotFoundException(String message){

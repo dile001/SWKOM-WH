@@ -1,4 +1,4 @@
-package at.fhtw.swen3.services.exceptions.bad_____exception;
+package at.fhtw.swen3.services.exceptions.badexception;
 
 public class BadParcelException extends Exception{
     public BadParcelException(String message){

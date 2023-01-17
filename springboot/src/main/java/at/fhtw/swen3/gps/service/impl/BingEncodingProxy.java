@@ -3,7 +3,7 @@ package at.fhtw.swen3.gps.service.impl;
 import at.fhtw.swen3.gps.service.Address;
 import at.fhtw.swen3.gps.service.GeoEncodingService;
 import at.fhtw.swen3.services.dto.GeoCoordinate;
-import at.fhtw.swen3.services.exceptions.bad_____exception.BadAddressException;
+import at.fhtw.swen3.services.exceptions.badexception.BadAddressException;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
 import org.json.JSONObject;
