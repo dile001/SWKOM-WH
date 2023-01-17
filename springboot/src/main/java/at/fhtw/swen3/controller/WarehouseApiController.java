@@ -4,9 +4,9 @@ import at.fhtw.swen3.controller.rest.WarehouseApi;
 import at.fhtw.swen3.services.WarehouseService;
 import at.fhtw.swen3.services.dto.Hop;
 import at.fhtw.swen3.services.dto.Warehouse;
-import at.fhtw.swen3.services.exceptions.bad_____exception.BadWarehouseException;
-import at.fhtw.swen3.services.exceptions._____notfoundexception.HierarchyNotFoundException;
-import at.fhtw.swen3.services.exceptions._____notfoundexception.HopNotFoundException;
+import at.fhtw.swen3.services.exceptions.badexception.BadWarehouseException;
+import at.fhtw.swen3.services.exceptions.notfoundexception.HierarchyNotFoundException;
+import at.fhtw.swen3.services.exceptions.notfoundexception.HopNotFoundException;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -69,7 +69,8 @@ public class WarehouseApiController implements WarehouseApi {
             logger.error("Response not serializable", e);
             return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<Void>(HttpStatus.OK);    }
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
 
     @Override
     public ResponseEntity<Warehouse> exportWarehouses() {

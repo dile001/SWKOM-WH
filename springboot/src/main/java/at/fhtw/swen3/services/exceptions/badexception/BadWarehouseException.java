@@ -1,4 +1,4 @@
-package at.fhtw.swen3.services.exceptions.bad_____exception;
+package at.fhtw.swen3.services.exceptions.badexception;
 
 public class BadWarehouseException extends Exception{
     public BadWarehouseException(String message){

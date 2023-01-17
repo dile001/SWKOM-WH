@@ -2,7 +2,7 @@ package at.fhtw.swen3.gps.service.impl;
 
 import at.fhtw.swen3.gps.service.Address;
 import at.fhtw.swen3.services.dto.GeoCoordinate;
-import at.fhtw.swen3.services.exceptions.bad_____exception.BadAddressException;
+import at.fhtw.swen3.services.exceptions.badexception.BadAddressException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -2,9 +2,9 @@ package at.fhtw.swen3.services;
 
 import at.fhtw.swen3.services.dto.Hop;
 import at.fhtw.swen3.services.dto.Warehouse;
-import at.fhtw.swen3.services.exceptions.bad_____exception.BadWarehouseException;
-import at.fhtw.swen3.services.exceptions._____notfoundexception.HierarchyNotFoundException;
-import at.fhtw.swen3.services.exceptions._____notfoundexception.HopNotFoundException;
+import at.fhtw.swen3.services.exceptions.badexception.BadWarehouseException;
+import at.fhtw.swen3.services.exceptions.notfoundexception.HierarchyNotFoundException;
+import at.fhtw.swen3.services.exceptions.notfoundexception.HopNotFoundException;
 
 public interface WarehouseService {
 
