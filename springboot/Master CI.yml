@@ -1,0 +1,44 @@
+name: Master CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: compile
+        run: cd springboot; mvn --batch-mode install
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: springboot/target/openapi-spring-1.22.1.jar
+
+  deploy:
+    needs: build
+    name: CD
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download JAR
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v13
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
+          use_existing_version_if_available: true
+          application_name: SWKOM-Dikic-App
+          environment_name: Swkomdikicapp-env-2
+          version_label: ${{github.SHA}}
+          region: us-east-1
+          deployment_package: openapi-spring-1.22.1.jar
