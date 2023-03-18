@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build docker image
-        run: docker build . -f Dockerfile -t parcel-swagger
+        run: docker build -t parcel-swagger
         env:
           db-url: ${{secrets.DB_URL}}
           db-username: ${{secrets.DB_USERNAME}}
