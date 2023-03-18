@@ -31,10 +31,11 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build docker image
-        run: docker build . -t parcel-swagger
+        run: docker build . -f Dockerfile -t parcel-swagger
         env:
           db-url: ${{secrets.DB_URL}}
           db-username: ${{secrets.DB_USERNAME}}
           db-password: ${{secrets.DB_PASSWORD}}
+
       - name: push docker image
         run: docker tag parcel-swagger dile001/swkom:latest | docker push dile001/swkom:latest
