@@ -30,6 +30,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Check out code
+          uses: actions/checkout@v2
+
       - name: Build docker image
         run: docker build -t parcel-swagger
         env:
