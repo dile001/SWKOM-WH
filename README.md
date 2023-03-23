@@ -1,2 +1,2 @@
 # SWKOM
-## Vasilije Dikic & Stefan Stojadinovic
+## Vasilije Dikic
