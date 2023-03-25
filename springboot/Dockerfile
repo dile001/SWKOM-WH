@@ -2,7 +2,7 @@ FROM eclipse-temurin:17-jdk-jammy
 
 EXPOSE 8080
 
-COPY target .
+COPY . .
 
 RUN cd .
 
