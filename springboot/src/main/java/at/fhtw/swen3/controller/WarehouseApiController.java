@@ -64,6 +64,7 @@ public class WarehouseApiController implements WarehouseApi {
     @Override
     public ResponseEntity<Void> importWarehouses(@Parameter(in = ParameterIn.DEFAULT, description = "", required=true, schema=@Schema()) @RequestBody Warehouse warehouse) {
         try{
+            logger.debug("aaaa");
             warehouseService.importWarehouses(warehouse);
         }catch (BadWarehouseException e){
             logger.error("Response not serializable", e);
