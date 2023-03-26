@@ -4,8 +4,6 @@ EXPOSE 8080
 
 COPY . .
 
-RUN cd .
-
 ENV db-url $db-url
 
 ENV db-username $db-username
