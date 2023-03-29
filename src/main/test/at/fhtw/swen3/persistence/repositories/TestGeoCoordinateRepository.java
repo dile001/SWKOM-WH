@@ -16,13 +16,9 @@ public class TestGeoCoordinateRepository {
 
     @Test
     public void testDb() {
-
-        GeoCoordinateEntity entity= repository.save(GeoCoordinateMapper.INSTANCE.dtoToEntity(new GeoCoordinate().lat(2.2).lon(2.2)));
-
-        Optional<GeoCoordinateEntity> optionalErrorEntity= repository.findById(entity.getId());
-
-        assert(optionalErrorEntity.isPresent());
-
+        GeoCoordinateEntity entity = repository.save(GeoCoordinateMapper.INSTANCE.dtoToEntity(new GeoCoordinate().lat(2.2).lon(2.2)));
+        Optional<GeoCoordinateEntity> optionalErrorEntity = repository.findById(entity.getId());
+        assert (optionalErrorEntity.isPresent());
         repository.delete(entity);
     }
 }

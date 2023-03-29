@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestWarehouseMapper {
     @Test
-    void testFromDTO() {
+    void testDTOToEntity() {
         Warehouse warehouse= new Warehouse().level(1).nextHops(new LinkedList<>()).code("wadw").hopType("hophop").description("desc").processingDelayMins(23).locationName("Wien").locationCoordinates(new GeoCoordinate().lon(23.0).lat(44.0));
 
         Truck truck = new Truck().numberPlate("ABCD").regionGeoJson("abcd").code("awdwd").description("desc").hopType("hophop").locationCoordinates(new GeoCoordinate().lat(32.0).lon(44.0)).locationName("Wien").processingDelayMins(23);
@@ -36,7 +36,7 @@ public class TestWarehouseMapper {
     }
 
     @Test
-    void fromEntity() {
+    void testEntityToDTO() {
         Warehouse warehouse= new Warehouse().level(1).nextHops(new LinkedList<>()).code("wadw").hopType("hophop").description("desc").processingDelayMins(23).locationName("Wien").locationCoordinates(new GeoCoordinate().lon(23.0).lat(44.0));
 
         Truck truck = new Truck().numberPlate("ABCD").regionGeoJson("abcd").code("awdwd").description("desc").hopType("hophop").locationCoordinates(new GeoCoordinate().lat(32.0).lon(44.0)).locationName("Wien").processingDelayMins(23);

@@ -12,7 +12,7 @@ public class TestHopArrivalMapper {
     HopArrival arrival = new HopArrival().code("ABC1").description("ABC").dateTime(OffsetDateTime.MAX);
 
     @Test
-    void fromDTO() {
+    void testDTOToEntity() {
         HopArrivalEntity entity = HopArrivalMapper.INSTANCE.dtoToEntity(arrival);
 
         assertEquals(arrival.getCode(), entity.getCode());
@@ -21,7 +21,7 @@ public class TestHopArrivalMapper {
     }
 
     @Test
-    void fromEntity() {
+    void testEntityToDTO() {
         HopArrivalEntity entity = HopArrivalMapper.INSTANCE.dtoToEntity(arrival);
         HopArrival newArrival = HopArrivalMapper.INSTANCE.entityToDto(entity);
 

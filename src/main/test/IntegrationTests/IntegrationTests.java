@@ -18,7 +18,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class IntegrationTests {
-
     HttpClient client = HttpClient.newHttpClient();
     HttpRequest request;
     HttpResponse<String> response;
@@ -39,7 +38,6 @@ public class IntegrationTests {
         System.out.println("Sucessfully reported arrival at all Hops");
         assert (testReportParcelDelivery(trackingId));
         System.out.println("Successfully delivered parcel");
-
     }
 
     String testSubmitParcel() {

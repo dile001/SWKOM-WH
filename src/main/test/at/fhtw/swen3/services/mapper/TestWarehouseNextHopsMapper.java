@@ -18,8 +18,7 @@ public class TestWarehouseNextHopsMapper {
     }
 
     @Test
-    void fromDTO() {
-
+    void testDTOToEntity() {
         setUp();
         WarehouseNextHopsEntity entity = WarehouseNextHopsMapper.INSTANCE.dtoToEntity(nextHops);
 
@@ -28,8 +27,7 @@ public class TestWarehouseNextHopsMapper {
     }
 
     @Test
-    void fromEntity() {
-
+    void testEntityToDTO() {
         setUp();
         WarehouseNextHopsEntity entity = WarehouseNextHopsMapper.INSTANCE.dtoToEntity(nextHops);
         WarehouseNextHops newNextHops = WarehouseNextHopsMapper.INSTANCE.entityToDto(entity);

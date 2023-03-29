@@ -10,7 +10,7 @@ public class TestRecipientMapper {
     Recipient recipient = new Recipient().city("Wien").name("Vasilije").country("Österreich").postalCode("1200").street("Wexstrasse");
 
     @Test
-    void fromDTO() {
+    void testDTOToEntity() {
         RecipientEntity entity = RecipientMapper.INSTANCE.dtoToEntity(recipient);
 
         assertEquals(recipient.getCity(), entity.getCity());
@@ -21,7 +21,7 @@ public class TestRecipientMapper {
     }
 
     @Test
-    void fromEntity() {
+    void testEntityToDTO() {
         RecipientEntity entity = RecipientMapper.INSTANCE.dtoToEntity(recipient);
         Recipient newRecipient = RecipientMapper.INSTANCE.entityToDto(entity);
 

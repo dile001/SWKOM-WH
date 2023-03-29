@@ -11,7 +11,7 @@ public class TestTransferWarehouseMapper {
     Transferwarehouse transferwarehouse = new Transferwarehouse().logisticsPartner("logisticsPartner").logisticsPartnerUrl("logisticsPartnerUrl").regionGeoJson("regionGeoJson").processingDelayMins(23).code("awdwad").description("description").hopType("hophop").locationCoordinates(new GeoCoordinate().lon(23.0).lat(43.0)).locationName("Wien");
 
     @Test
-    void fromDTO() {
+    void testDTOToEntity() {
         TransferWarehouseEntity entity = TransferWarehouseMapper.INSTANCE.dtoToEntity(transferwarehouse);
         assertEquals(transferwarehouse.getCode(), entity.getCode());
         assertEquals(transferwarehouse.getDescription(), entity.getDescription());
@@ -28,7 +28,7 @@ public class TestTransferWarehouseMapper {
     }
 
     @Test
-    void fromEntity() {
+    void testEntityToDTO() {
         TransferWarehouseEntity entity = TransferWarehouseMapper.INSTANCE.dtoToEntity(transferwarehouse);
         Transferwarehouse newWarehouse = TransferWarehouseMapper.INSTANCE.entityToDto(entity);
         assertEquals(entity.getCode(), newWarehouse.getCode());

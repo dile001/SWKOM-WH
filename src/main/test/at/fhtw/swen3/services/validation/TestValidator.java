@@ -29,7 +29,6 @@ public class TestValidator {
         correctCoordinate.setLat(32.0);
         correctCoordinate.setLon(23.9);
 
-
         assertDoesNotThrow(() -> Validator.validate(correctCoordinate));
         assertThrows(ValidationException.class, () -> Validator.validate(brokenCoordinate));
     }

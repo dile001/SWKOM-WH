@@ -11,7 +11,7 @@ public class TestTruckMapper {
     Truck truck = new Truck().numberPlate("ABCD").regionGeoJson("abcd").code("awdwd").description("desc").hopType("hophop").locationCoordinates(new GeoCoordinate().lat(32.0).lon(44.0)).locationName("Wien").processingDelayMins(23);
 
     @Test
-    void fromDTO() {
+    void testDTOToEntity() {
         TruckEntity entity= TruckMapper.INSTANCE.dtoToEntity(truck);
 
         assertEquals(truck.getCode(), entity.getCode());
@@ -28,7 +28,7 @@ public class TestTruckMapper {
     }
 
     @Test
-    void fromEntity() {
+    void testEntityToDTO() {
         TruckEntity entity= TruckMapper.INSTANCE.dtoToEntity(truck);
         Truck newTruck= TruckMapper.INSTANCE.entityToDto(entity);
 

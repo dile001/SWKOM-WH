@@ -11,18 +11,14 @@ import java.util.Optional;
 
 @SpringBootTest
 public class TestErrorRepository {
-
     @Autowired
     ErrorRepository repository;
 
     @Test
     public void testErrorRepository() {
         ErrorEntity entity = repository.save(ErrorMapper.INSTANCE.dtoToEntity(new Error().errorMessage("test")));
-
         Optional<ErrorEntity> optionalErrorEntity = repository.findById(entity.getId());
-
         assert (optionalErrorEntity.isPresent());
-
         repository.delete(entity);
     }
 }
